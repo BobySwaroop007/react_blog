@@ -30,11 +30,11 @@ const Post = () => {
     };
 const handleSubmit = (e) =>{
 e.preventDefault();
-// if(Title == '' || content == ''){
-//   alert("form filled!");
-// }
-// else{
-  var c = document.getElementById("ab").innerHTML ='<div>{content}</div>';
+if(Title == '' || content == ''){
+  alert("form filled!");
+}
+else{
+  var c = document.getElementById("ab").innerHTML =`<div>${content}</div>`;
   addDoc(collection(db, "blogs"), {
    title:Title,
    Content:content,
@@ -45,7 +45,7 @@ e.preventDefault();
   }).catch((err)=>{
     alert(err);
   })
-// }
+}
 }
   
   return (
